@@ -1,0 +1,461 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2AB38130C429FBE1A1C6C736 /* Pods_PeopleMon_SondraClark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 032A7CB0964595D6213CC050 /* Pods_PeopleMon_SondraClark.framework */; };
+		A51BEF351DD0182300527BD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BEF341DD0182300527BD1 /* AppDelegate.swift */; };
+		A51BEF371DD0182300527BD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BEF361DD0182300527BD1 /* ViewController.swift */; };
+		A51BEF3A1DD0182300527BD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51BEF381DD0182300527BD1 /* Main.storyboard */; };
+		A51BEF3C1DD0182300527BD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A51BEF3B1DD0182300527BD1 /* Assets.xcassets */; };
+		A51BEF3F1DD0182300527BD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51BEF3D1DD0182300527BD1 /* LaunchScreen.storyboard */; };
+		A51BEF4A1DD0190900527BD1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BEF491DD0190900527BD1 /* LoginViewController.swift */; };
+		A51BEF4C1DD01E7100527BD1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BEF4B1DD01E7100527BD1 /* RegisterViewController.swift */; };
+		A51BEF4F1DD0277C00527BD1 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BEF4E1DD0277C00527BD1 /* NetworkModel.swift */; };
+		A51BEF551DD031B100527BD1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BEF541DD031B100527BD1 /* Constants.swift */; };
+		A51BEF571DD031CF00527BD1 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BEF561DD031CF00527BD1 /* Utils.swift */; };
+		A51BEF591DD031ED00527BD1 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BEF581DD031ED00527BD1 /* UserStore.swift */; };
+		A51BEF5B1DD0D60B00527BD1 /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BEF5A1DD0D60B00527BD1 /* WebServices.swift */; };
+		A51BEF5D1DD0D63C00527BD1 /* WebServicesExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BEF5C1DD0D63C00527BD1 /* WebServicesExtensions.swift */; };
+		A51BEF601DD0FD8E00527BD1 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BEF5F1DD0FD8E00527BD1 /* Account.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		032A7CB0964595D6213CC050 /* Pods_PeopleMon_SondraClark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PeopleMon_SondraClark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C0D99B01A3C26FA5F7B718A /* Pods-PeopleMon-SondraClark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeopleMon-SondraClark.release.xcconfig"; path = "Pods/Target Support Files/Pods-PeopleMon-SondraClark/Pods-PeopleMon-SondraClark.release.xcconfig"; sourceTree = "<group>"; };
+		7B370AF783D61F02AD74E086 /* Pods-PeopleMon-SondraClark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeopleMon-SondraClark.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PeopleMon-SondraClark/Pods-PeopleMon-SondraClark.debug.xcconfig"; sourceTree = "<group>"; };
+		A51BEF311DD0182300527BD1 /* PeopleMon-SondraClark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PeopleMon-SondraClark.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A51BEF341DD0182300527BD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A51BEF361DD0182300527BD1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A51BEF391DD0182300527BD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A51BEF3B1DD0182300527BD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A51BEF3E1DD0182300527BD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A51BEF401DD0182300527BD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A51BEF491DD0190900527BD1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A51BEF4B1DD01E7100527BD1 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		A51BEF4E1DD0277C00527BD1 /* NetworkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
+		A51BEF541DD031B100527BD1 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A51BEF561DD031CF00527BD1 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		A51BEF581DD031ED00527BD1 /* UserStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
+		A51BEF5A1DD0D60B00527BD1 /* WebServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServices.swift; sourceTree = "<group>"; };
+		A51BEF5C1DD0D63C00527BD1 /* WebServicesExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServicesExtensions.swift; sourceTree = "<group>"; };
+		A51BEF5F1DD0FD8E00527BD1 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A51BEF2E1DD0182300527BD1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AB38130C429FBE1A1C6C736 /* Pods_PeopleMon_SondraClark.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4660AD4548E865B48982E3BC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7B370AF783D61F02AD74E086 /* Pods-PeopleMon-SondraClark.debug.xcconfig */,
+				5C0D99B01A3C26FA5F7B718A /* Pods-PeopleMon-SondraClark.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4EF590E40C552942B80484B5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				032A7CB0964595D6213CC050 /* Pods_PeopleMon_SondraClark.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A51BEF281DD0182300527BD1 = {
+			isa = PBXGroup;
+			children = (
+				A51BEF531DD0319600527BD1 /* Components */,
+				A51BEF501DD0307400527BD1 /* Models */,
+				A51BEF4D1DD0275500527BD1 /* Networking */,
+				A51BEF481DD018F000527BD1 /* ViewControllers */,
+				A51BEF471DD018C700527BD1 /* Storyboards */,
+				A51BEF331DD0182300527BD1 /* PeopleMon-SondraClark */,
+				A51BEF321DD0182300527BD1 /* Products */,
+				4660AD4548E865B48982E3BC /* Pods */,
+				4EF590E40C552942B80484B5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A51BEF321DD0182300527BD1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A51BEF311DD0182300527BD1 /* PeopleMon-SondraClark.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A51BEF331DD0182300527BD1 /* PeopleMon-SondraClark */ = {
+			isa = PBXGroup;
+			children = (
+				A51BEF341DD0182300527BD1 /* AppDelegate.swift */,
+				A51BEF361DD0182300527BD1 /* ViewController.swift */,
+				A51BEF3B1DD0182300527BD1 /* Assets.xcassets */,
+				A51BEF3D1DD0182300527BD1 /* LaunchScreen.storyboard */,
+				A51BEF401DD0182300527BD1 /* Info.plist */,
+			);
+			path = "PeopleMon-SondraClark";
+			sourceTree = "<group>";
+		};
+		A51BEF471DD018C700527BD1 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A51BEF381DD0182300527BD1 /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		A51BEF481DD018F000527BD1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A51BEF491DD0190900527BD1 /* LoginViewController.swift */,
+				A51BEF4B1DD01E7100527BD1 /* RegisterViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A51BEF4D1DD0275500527BD1 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				A51BEF4E1DD0277C00527BD1 /* NetworkModel.swift */,
+				A51BEF5A1DD0D60B00527BD1 /* WebServices.swift */,
+				A51BEF5C1DD0D63C00527BD1 /* WebServicesExtensions.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		A51BEF501DD0307400527BD1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A51BEF5F1DD0FD8E00527BD1 /* Account.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		A51BEF531DD0319600527BD1 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A51BEF541DD031B100527BD1 /* Constants.swift */,
+				A51BEF561DD031CF00527BD1 /* Utils.swift */,
+				A51BEF581DD031ED00527BD1 /* UserStore.swift */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A51BEF301DD0182300527BD1 /* PeopleMon-SondraClark */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A51BEF431DD0182300527BD1 /* Build configuration list for PBXNativeTarget "PeopleMon-SondraClark" */;
+			buildPhases = (
+				0677A1D718EC5BF41F749C00 /* [CP] Check Pods Manifest.lock */,
+				A51BEF2D1DD0182300527BD1 /* Sources */,
+				A51BEF2E1DD0182300527BD1 /* Frameworks */,
+				A51BEF2F1DD0182300527BD1 /* Resources */,
+				928632349255507DFDC7836D /* [CP] Embed Pods Frameworks */,
+				453CE8D053DC9E10F97EA522 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PeopleMon-SondraClark";
+			productName = "PeopleMon-SondraClark";
+			productReference = A51BEF311DD0182300527BD1 /* PeopleMon-SondraClark.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A51BEF291DD0182300527BD1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Sondra Clark";
+				TargetAttributes = {
+					A51BEF301DD0182300527BD1 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A51BEF2C1DD0182300527BD1 /* Build configuration list for PBXProject "PeopleMon-SondraClark" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A51BEF281DD0182300527BD1;
+			productRefGroup = A51BEF321DD0182300527BD1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A51BEF301DD0182300527BD1 /* PeopleMon-SondraClark */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A51BEF2F1DD0182300527BD1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A51BEF3F1DD0182300527BD1 /* LaunchScreen.storyboard in Resources */,
+				A51BEF3C1DD0182300527BD1 /* Assets.xcassets in Resources */,
+				A51BEF3A1DD0182300527BD1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0677A1D718EC5BF41F749C00 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		453CE8D053DC9E10F97EA522 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PeopleMon-SondraClark/Pods-PeopleMon-SondraClark-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		928632349255507DFDC7836D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PeopleMon-SondraClark/Pods-PeopleMon-SondraClark-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A51BEF2D1DD0182300527BD1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A51BEF4A1DD0190900527BD1 /* LoginViewController.swift in Sources */,
+				A51BEF601DD0FD8E00527BD1 /* Account.swift in Sources */,
+				A51BEF371DD0182300527BD1 /* ViewController.swift in Sources */,
+				A51BEF351DD0182300527BD1 /* AppDelegate.swift in Sources */,
+				A51BEF551DD031B100527BD1 /* Constants.swift in Sources */,
+				A51BEF4F1DD0277C00527BD1 /* NetworkModel.swift in Sources */,
+				A51BEF5B1DD0D60B00527BD1 /* WebServices.swift in Sources */,
+				A51BEF591DD031ED00527BD1 /* UserStore.swift in Sources */,
+				A51BEF4C1DD01E7100527BD1 /* RegisterViewController.swift in Sources */,
+				A51BEF571DD031CF00527BD1 /* Utils.swift in Sources */,
+				A51BEF5D1DD0D63C00527BD1 /* WebServicesExtensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A51BEF381DD0182300527BD1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A51BEF391DD0182300527BD1 /* Base */,
+			);
+			name = Main.storyboard;
+			path = "PeopleMon-SondraClark";
+			sourceTree = "<group>";
+		};
+		A51BEF3D1DD0182300527BD1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A51BEF3E1DD0182300527BD1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A51BEF411DD0182300527BD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A51BEF421DD0182300527BD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A51BEF441DD0182300527BD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B370AF783D61F02AD74E086 /* Pods-PeopleMon-SondraClark.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "PeopleMon-SondraClark/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TEKY1.PeopleMon-SondraClark";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A51BEF451DD0182300527BD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C0D99B01A3C26FA5F7B718A /* Pods-PeopleMon-SondraClark.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "PeopleMon-SondraClark/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TEKY1.PeopleMon-SondraClark";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A51BEF2C1DD0182300527BD1 /* Build configuration list for PBXProject "PeopleMon-SondraClark" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A51BEF411DD0182300527BD1 /* Debug */,
+				A51BEF421DD0182300527BD1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A51BEF431DD0182300527BD1 /* Build configuration list for PBXNativeTarget "PeopleMon-SondraClark" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A51BEF441DD0182300527BD1 /* Debug */,
+				A51BEF451DD0182300527BD1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A51BEF291DD0182300527BD1 /* Project object */;
+}
