@@ -18,7 +18,7 @@ struct Constants {
     public static let keychainIdentifier = "PeopleMon-SondraClarkKeychain"
     public static let authTokenExpireDate = "authTokenExpireDate"
     public static let authToken = "authToken"
-    public static let apiKey = "iOSandroid301november2016"
+    public static let ApiKey = "iOSandroid301november2016"
     
     // Step 4: JSON Constants
     struct JSON {
@@ -26,7 +26,7 @@ struct Constants {
         static let processingError = "There was an error processing the response"
     }
     
-    struct Account {
+    struct Person {
         static let email = "email"
         static let fullName = "fullName"
         static let avatarBase64 = "avatarBase64"

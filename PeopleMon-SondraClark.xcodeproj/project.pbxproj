@@ -21,7 +21,8 @@
 		A51BEF591DD031ED00527BD1 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BEF581DD031ED00527BD1 /* UserStore.swift */; };
 		A51BEF5B1DD0D60B00527BD1 /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BEF5A1DD0D60B00527BD1 /* WebServices.swift */; };
 		A51BEF5D1DD0D63C00527BD1 /* WebServicesExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BEF5C1DD0D63C00527BD1 /* WebServicesExtensions.swift */; };
-		A51BEF601DD0FD8E00527BD1 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BEF5F1DD0FD8E00527BD1 /* Account.swift */; };
+		A51BEF641DD15FF600527BD1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BEF631DD15FF600527BD1 /* User.swift */; };
+		A51BEF661DD16A2200527BD1 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BEF651DD16A2200527BD1 /* People.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +44,8 @@
 		A51BEF581DD031ED00527BD1 /* UserStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
 		A51BEF5A1DD0D60B00527BD1 /* WebServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServices.swift; sourceTree = "<group>"; };
 		A51BEF5C1DD0D63C00527BD1 /* WebServicesExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServicesExtensions.swift; sourceTree = "<group>"; };
-		A51BEF5F1DD0FD8E00527BD1 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		A51BEF631DD15FF600527BD1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A51BEF651DD16A2200527BD1 /* People.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,7 +142,8 @@
 		A51BEF501DD0307400527BD1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A51BEF5F1DD0FD8E00527BD1 /* Account.swift */,
+				A51BEF631DD15FF600527BD1 /* User.swift */,
+				A51BEF651DD16A2200527BD1 /* People.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -279,13 +282,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A51BEF4A1DD0190900527BD1 /* LoginViewController.swift in Sources */,
-				A51BEF601DD0FD8E00527BD1 /* Account.swift in Sources */,
 				A51BEF371DD0182300527BD1 /* ViewController.swift in Sources */,
 				A51BEF351DD0182300527BD1 /* AppDelegate.swift in Sources */,
 				A51BEF551DD031B100527BD1 /* Constants.swift in Sources */,
+				A51BEF661DD16A2200527BD1 /* People.swift in Sources */,
 				A51BEF4F1DD0277C00527BD1 /* NetworkModel.swift in Sources */,
 				A51BEF5B1DD0D60B00527BD1 /* WebServices.swift in Sources */,
 				A51BEF591DD031ED00527BD1 /* UserStore.swift in Sources */,
+				A51BEF641DD15FF600527BD1 /* User.swift in Sources */,
 				A51BEF4C1DD01E7100527BD1 /* RegisterViewController.swift in Sources */,
 				A51BEF571DD031CF00527BD1 /* Utils.swift in Sources */,
 				A51BEF5D1DD0D63C00527BD1 /* WebServicesExtensions.swift in Sources */,
