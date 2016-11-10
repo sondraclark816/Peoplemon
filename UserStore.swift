@@ -23,6 +23,7 @@ class UserStore {
         //Call web service to login
         WebServices.shared.authUser(loginUser) { (user, error) in
             if let user = user {
+                print("Token: \(user.token) Expiration: \(user.expiration)")
                 WebServices.shared.setAuthToken(user.token, expiration: user.expiration)
                 completion(true, nil)
             } else {

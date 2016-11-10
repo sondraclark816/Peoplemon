@@ -13,12 +13,13 @@ import UIKit
 struct Constants {
    
     // Step 7: Add keychain strings
-    public static let keychainIdentifier = "EFABKeychain"
+    public static let keychainIdentifier = "PeopleMon-SondraClarkKeychain"
     public static let authTokenExpireDate = "authTokenExpireDate"
     public static let authToken = "authToken"
     public static let apiKey = "ApiKey"
     public static let ApiKey = "iOS301november2016"
-    public static let grantType = "password"
+    public static let grantType = "grant_type"
+    static let radius = 100.00
     
     // Step 4: JSON Constants
     struct JSON {
@@ -30,21 +31,44 @@ struct Constants {
     struct Person {
         static let id = "id"
         static let email = "Email"
-        static let password = "password"
-        static let oldPassword = "oldPassword"
-        static let newPassword = "newPassword"
-        static let confirmPassword = "confirmPassword"
+        static let hasRegistered = "HasRegistered"
         static let loginProvider = "loginProvider"
         static let fullName = "FullName"
-        static let lastCheckinLong = "0"
-        static let lastCheckinLat = "0"
-        static let lastCheckinDateTime = "0"
         static let avatarBase64 = "AvatarBase64"
+        static let lastCheckinLong = "LastCheckInLongitude"
+        static let lastCheckinLat = "LastCheckInLatitude"
+        static let lastCheckinDateTime = "LastCheckInDateTime"
+        static let oldPassword = "OldPassword"
+        static let newPassword = "newPassword"
+        static let confirmPassword = "confirmPassword"
         static let apiKey = "ApiKey"
+        static let password = "password"
+        static let grantType = "grant_type"
+        static let userName = "username"
         static let token =  "access_token"
         static let expiration = ".expires"
-        static let userName = "username"
-        static let hasRegistered = "HasRegistered"
+            }
+    
+    struct User {
+        static let userId = "userId"
+        static let userName = "userName"
+        static let avatarBase64 = "avatarBase64"
+        static let latitude = "latitude"
+        static let longitude = "longitude"
+        static let created = "created"
+        static let radiusInMeter = "radiusInMeter"
+        static let caughtUserId = "caughtUserId"
+        static let conversationId = "conversationId"
+        static let recipientId = "recipientId"
+        static let recipientName = "recipientName"
+        static let lastMessage = "lastMessage"
+        static let messageCount = "messageCount"
+        static let senderId = "senderId"
+        static let senderName = "senderName"
+        static let recipientAvatarBase64 = "recipientAvatarBase64"
+        static let senderAvatarBase64 = "senderAvatarBase64"
+        static let grantType = "grant_type"
+        static let expiration = ".expires"
     }
     
 }
