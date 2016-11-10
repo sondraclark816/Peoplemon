@@ -85,7 +85,7 @@
             </objects>
             <point key="canvasLocation" x="396" y="-539.28035982008998"/>
         </scene>
-        <!--Root View Controller-->
+        <!--People Caught-->
         <scene sceneID="uL3-zX-w5a">
             <objects>
                 <tableViewController id="h8C-Et-REO" sceneMemberID="viewController">
@@ -101,17 +101,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J68-x4-OvV">
-                                            <rect key="frame" x="8" y="18" width="180" height="34"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J68-x4-OvV">
+                                            <rect key="frame" x="8" y="18" width="359" height="34"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.59999999999999998" green="0.0" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Times Caught" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVt-68-X8x">
-                                            <rect key="frame" x="247" y="18" width="120" height="34"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                             <color key="textColor" red="0.59999999999999998" green="0.0" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -125,7 +118,14 @@
                             <outlet property="delegate" destination="h8C-Et-REO" id="tkP-X9-tCk"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="coO-Vo-XPm"/>
+                    <navigationItem key="navigationItem" title="People Caught" id="qMm-hr-zmE">
+                        <barButtonItem key="leftBarButtonItem" image="nav back icon -dark" id="VFL-E8-6Be">
+                            <color key="tintColor" red="0.59999999999999998" green="0.0" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="I46-Jf-p5Q" kind="show" id="5kQ-un-cxh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jqb-1v-8VE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -197,8 +197,10 @@
     </scenes>
     <resources>
         <image name="logout" width="25" height="25"/>
+        <image name="nav back icon -dark" width="11" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="5kQ-un-cxh"/>
         <segue reference="rej-HC-Awo"/>
     </inferredMetricsTieBreakers>
 </document>

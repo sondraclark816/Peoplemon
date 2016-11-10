@@ -158,8 +158,8 @@
 		A51BEF501DD0307400527BD1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A51BEF651DD16A2200527BD1 /* People.swift */,
 				A51BEF631DD15FF600527BD1 /* User.swift */,
+				A51BEF651DD16A2200527BD1 /* People.swift */,
 				A51BEF701DD27D2800527BD1 /* MapPin.swift */,
 			);
 			name = Models;

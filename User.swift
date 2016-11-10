@@ -134,7 +134,7 @@ class User : NetworkModel {
     func path() -> String {
         switch requestType {
         case .nearby:
-            return "/v1/User/Nearby?radiusInMeters=\(radiusInMeters!)"
+            return "/v1/User/Nearby"
         case .checkin:
             return "/v1/User/CheckIn"
         case .Catch:
@@ -151,22 +151,27 @@ class User : NetworkModel {
     }
     
     func toDictionary() -> [String: AnyObject]? {
+        var params: [String: AnyObject] = [:]
+        
         switch requestType {
         case .checkin:
-            var params: [String: AnyObject] = [:]
             params[Constants.User.latitude] = latitude as AnyObject?
             params[Constants.User.longitude] = longitude as AnyObject?
-            return params
+            
             
         case .Catch:
-            var params: [String: AnyObject] = [:]
             params[Constants.User.userName] = userName as AnyObject?
             params[Constants.User.latitude] = latitude as AnyObject?
             params[Constants.User.longitude] = longitude as AnyObject?
-            return params
+            
+            
+        case .nearby:
+            params[Constants.User.radiusInMeter] = radiusInMeters as AnyObject?
+            
             
         default:
             return nil
         }
+        return params
     }
 }

@@ -17,7 +17,7 @@ struct Constants {
     public static let authTokenExpireDate = "authTokenExpireDate"
     public static let authToken = "authToken"
     public static let apiKey = "ApiKey"
-    public static let ApiKey = "iOS301november2016"
+    public static let ApiKey = "iOSandroid301november2016"
     public static let grantType = "grant_type"
     static let radius = 100.00
     
@@ -50,13 +50,13 @@ struct Constants {
             }
     
     struct User {
-        static let userId = "userId"
-        static let userName = "userName"
-        static let avatarBase64 = "avatarBase64"
-        static let latitude = "latitude"
-        static let longitude = "longitude"
-        static let created = "created"
-        static let radiusInMeter = "radiusInMeter"
+        static let userId = "UserId"
+        static let userName = "UserName"
+        static let avatarBase64 = "AvatarBase64"
+        static let latitude = "Latitude"
+        static let longitude = "Longitude"
+        static let created = "Created"
+        static let radiusInMeter = "radiusInMeters"
         static let caughtUserId = "caughtUserId"
         static let conversationId = "conversationId"
         static let recipientId = "recipientId"

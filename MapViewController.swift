@@ -2,73 +2,37 @@ import UIKit
 import MapKit
 import MBProgressHUD
 import CoreLocation
+import SafariServices
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     
     
     let locationManager = CLLocationManager()
-    var updateLocation = 0
+    var updateLocation = true
+    var annotations: [MapPin] = []
+    var latitudeDelta = 0.005
+    var longitudeDelta = 0.005
     
-    var nearbyPeople = [User]()
-    
+//    var nearbyPeople = [User]()
+    var overlay: MKAnnotation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("view loaded")
-        // Do any additional setup after loading the view.
+       
         self.locationManager.delegate = self
+        mapView.delegate = self
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.distanceFilter = kCLDistanceFilterNone
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        mapView.showsUserLocation = true
+        locationManager.startUpdatingLocation()
         
-        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse{
-            self.mapView.showsUserLocation = true
-            self.locationManager.startUpdatingLocation()
-            
-            
-        }else{
-            self .locationManager.requestWhenInUseAuthorization()
-        }
+        loadNearbyPeople()
         
-        self.locationManager.delegate = self
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        self.locationManager.requestAlwaysAuthorization()
-        self.locationManager.startUpdatingLocation()
-        self.mapView.showsUserLocation = true
-        
-        
-        
-        let initialLocation = CLLocation(latitude: 37.8165, longitude: -82.8085)
-        
-        let regionRadius: CLLocationDistance = 100
-        func centerMapOnLocation(location: CLLocation) {
-            let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
-                                                                      regionRadius * 2.0, regionRadius * 2.0)
-            mapView.setRegion(coordinateRegion, animated: true)
-        }
-        
-        centerMapOnLocation(location: initialLocation)
-        
-        
-        func loadNearbyPeople (){
-            let nearbyPerson = User(radiusInMeters: Constants.radius)
-            
-            WebServices.shared.getObjects(nearbyPerson) { (everyoneNearby, error) in
-                if let everyoneNearby = everyoneNearby {
-                    self.nearbyPeople = everyoneNearby
-                    
-                    
-                }
-            }
-        }
-        
-        
-        func locationManager(_ manager:CLLocationManager, didUpdateLocations locations: [CLLocation]){
-            
-            
-            let myArea = MKCoordinateRegionMakeWithDistance(self.locationManager.location!.coordinate, 1000, 1000)
-            self.mapView.setRegion(myArea, animated: true)
-            
-        }
+        print("Make it do view did load and through loadNearbyPeople")
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -82,6 +46,30 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             
         }
     }
+    
+    
+    
+    
+    
+    func loadNearbyPeople (){
+        let nearbyPerson = User(radiusInMeters: 500.0)
+        
+       
+                WebServices.shared.getObjects(nearbyPerson) { (objects, errors) in
+                    if let objects = objects {
+                        let oldannotations = self.annotations
+                        self.annotations = []
+                        for user in objects {
+                            let pin = MapPin(user: user)
+                            self.annotations.append(pin)
+                        }
+                        self.mapView.addAnnotations(self.annotations)
+                        self.mapView.removeAnnotations(oldannotations)
+                    }
+                }
+            }
+    
+
     //Mark - @IBActions
     @IBAction func logoutTapped(_ sender: Any) {
         UserStore.shared.logout{
@@ -110,5 +98,44 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
          // Pass the selected object to the new view controller.
          }
          */
+    }
+}
+
+extension MapViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations.last!
+        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpanMake(latitudeDelta, longitudeDelta))
+        mapView.setRegion(region, animated: true)
+        updateLocation = false
+        locationManager.stopUpdatingLocation()
+        
+//        let myArea = MKCoordinateRegionMakeWithDistance(self.locationManager.location!.coordinate, 100, 100)
+//        self.mapView.setRegion(myArea, animated: true)
+        
+        
+    }
+    
+}
+
+extension MapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation {
+            return nil
+        }
+        
+        let reuseId = "pin"
+        
+        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
+        if pinView == nil {
+            pinView?.isEnabled = true
+            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            pinView!.canShowCallout = true
+            pinView!.animatesDrop = true
+            
+        } else {
+            pinView?.annotation = annotation
+        }
+        return pinView
     }
 }
