@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CaughtViewController: UIViewController {
+class CaughtViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,24 @@ class CaughtViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        return cell
+    }
+    
+    private func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
+    
+   
+}
+    
+    
+    
     /*
     // MARK: - Navigation
 
@@ -32,4 +49,4 @@ class CaughtViewController: UIViewController {
     }
     */
 
-}
+

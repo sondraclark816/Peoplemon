@@ -14,13 +14,13 @@ class MapViewController: UIViewController {
     var annotations: [MapPin] = []
     var latitudeDelta = 0.005
     var longitudeDelta = 0.005
+    var caught: [Caught]!
     
-//    var nearbyPeople = [User]()
     var overlay: MKAnnotation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         self.locationManager.delegate = self
         mapView.delegate = self
         locationManager.delegate = self
@@ -32,7 +32,7 @@ class MapViewController: UIViewController {
         
         loadNearbyPeople()
         
-        print("Make it do view did load and through loadNearbyPeople")
+        print("Made it do view did load and through loadNearbyPeople")
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -52,24 +52,52 @@ class MapViewController: UIViewController {
     
     
     func loadNearbyPeople (){
-        let nearbyPerson = User(radiusInMeters: 500.0)
-        
-       
-                WebServices.shared.getObjects(nearbyPerson) { (objects, errors) in
-                    if let objects = objects {
-                        let oldannotations = self.annotations
-                        self.annotations = []
-                        for user in objects {
-                            let pin = MapPin(user: user)
-                            self.annotations.append(pin)
-                        }
-                        self.mapView.addAnnotations(self.annotations)
-                        self.mapView.removeAnnotations(oldannotations)
-                    }
+        let nearbyPerson = User(radiusInMeters: 100.0)
+        WebServices.shared.getObjects(nearbyPerson) { (objects, errors) in
+            if let objects = objects {
+                let oldannotations = self.annotations
+                self.annotations = []
+                for user in objects {
+                    let pin = MapPin(user: user)
+                    self.annotations.append(pin)
                 }
+                self.mapView.addAnnotations(self.annotations)
+                self.mapView.removeAnnotations(oldannotations)
             }
+        }
+    }
     
-
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        if let mapPin = view.annotation as? MapPin, let people = mapPin.user, let name = people.userName, let userId = people.userId {
+            let alert = UIAlertController(title: "Catch", message: "\(name)?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Catch", style: .default, handler: { (action) in
+                let catchPeople = User(caughtUserId: userId, radiusInMeters: 100.0)
+                WebServices.shared.postObject(catchPeople, completion: { (object, error) in
+                    if let error = error{
+                        self.present(Utils.createAlert(message: error), animated: true, completion: nil)
+                    } else{
+                        self.present(Utils.createAlert("Nice!", message: "You've caught \(name)!"), animated: true, completion: nil)
+                        
+                        
+                        let filePath = self.archiveFilePath()
+                        let fileManager = FileManager.default
+                        
+                        if fileManager.fileExists(atPath: filePath) {
+                            self.caught = NSKeyedUnarchiver.unarchiveObject(withFile: filePath) as! [Caught]
+                        } else {
+                            self.caught = []
+                            self.caught.append(Caught(username: "Note 1", avatar: "This is my note."))
+                            
+                        }
+                    }
+                })
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    
     //Mark - @IBActions
     @IBAction func logoutTapped(_ sender: Any) {
         UserStore.shared.logout{
@@ -110,8 +138,8 @@ extension MapViewController: CLLocationManagerDelegate {
         updateLocation = false
         locationManager.stopUpdatingLocation()
         
-//        let myArea = MKCoordinateRegionMakeWithDistance(self.locationManager.location!.coordinate, 100, 100)
-//        self.mapView.setRegion(myArea, animated: true)
+        //        let myArea = MKCoordinateRegionMakeWithDistance(self.locationManager.location!.coordinate, 100, 100)
+        //        self.mapView.setRegion(myArea, animated: true)
         
         
     }
@@ -137,5 +165,15 @@ extension MapViewController: MKMapViewDelegate {
             pinView?.annotation = annotation
         }
         return pinView
+    }
+    
+    
+    //MARK: Private Functions
+    fileprivate func archiveFilePath() -> String{
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        //Makes a path directly to the file in an array of strings
+        let documentsDirectory = paths.first!
+        let path = (documentsDirectory as NSString).appendingPathComponent("CaughtStore.plist")
+        return path
     }
 }

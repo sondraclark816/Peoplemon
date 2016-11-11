@@ -19,7 +19,7 @@ class User : NetworkModel {
     var longitude : Double?
     var created : String?
     var radiusInMeters : Double?
-    var caughtUserId : Int?
+    var caughtUserId : String?
     var conversationId : String?
     var recipientId : String?
     var recipientName : String?
@@ -32,6 +32,7 @@ class User : NetworkModel {
     var grant_type : String?
     var expiration : Int?
     var radius = 100
+    
     
     
     enum RequestType {
@@ -58,7 +59,7 @@ class User : NetworkModel {
         longitude = try? json.getDouble(at: Constants.User.longitude)
         created = try? json.getString(at: Constants.User.created)
         radiusInMeters = try? json.getDouble(at: Constants.User.radiusInMeter)
-        caughtUserId = try? json.getInt(at: Constants.User.caughtUserId)
+        caughtUserId = try? json.getString(at: Constants.User.caughtUserId)
         conversationId = try? json.getString(at: Constants.User.conversationId)
         recipientId = try? json.getString(at: Constants.User.recipientId)
         recipientName = try? json.getString(at: Constants.User.recipientName)
@@ -84,7 +85,7 @@ class User : NetworkModel {
         requestType = .checkin
     }
     
-    init(caughtUserId: Int?, radiusInMeters: Double?) {
+    init(caughtUserId: String?, radiusInMeters: Double?) {
         self.caughtUserId = caughtUserId
         self.radiusInMeters = radiusInMeters
         requestType = .Catch

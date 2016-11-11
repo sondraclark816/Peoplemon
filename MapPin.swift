@@ -17,15 +17,18 @@ class MapPin: NSObject, MKAnnotation {
     var avatarBase64: String?
     var title: String?
     var subtitle: String?
+    var subsubtitle: String?
+    
     
     
     
     init(user: User) {
         self.user = user
         self.userId = user.userId
-        self.subtitle = user.userName
+        self.subtitle = user.userId
         self.title = user.userName
         self.avatarBase64 = user.avatarBase64
+        self.subsubtitle = user.caughtUserId
         
         
         if let lat = user.latitude, let long = user.longitude {

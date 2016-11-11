@@ -27,7 +27,10 @@
 		A51BEF6B1DD2619D00527BD1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BEF6A1DD2619D00527BD1 /* MapViewController.swift */; };
 		A51BEF6D1DD2779400527BD1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BEF6C1DD2779400527BD1 /* ProfileViewController.swift */; };
 		A51BEF711DD27D2800527BD1 /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BEF701DD27D2800527BD1 /* MapPin.swift */; };
-		A51BEF731DD4B86C00527BD1 /* CaughtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BEF721DD4B86C00527BD1 /* CaughtViewController.swift */; };
+		A51BEF791DD5587800527BD1 /* CaughtTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BEF781DD5587800527BD1 /* CaughtTableViewCell.swift */; };
+		A51BEF7B1DD55ADE00527BD1 /* CaughtTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BEF7A1DD55ADE00527BD1 /* CaughtTableViewController.swift */; };
+		A51BEF7D1DD55CEA00527BD1 /* Caught.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BEF7C1DD55CEA00527BD1 /* Caught.swift */; };
+		A51BEF811DD5702B00527BD1 /* CaughtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BEF801DD5702B00527BD1 /* CaughtViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,7 +59,10 @@
 		A51BEF6A1DD2619D00527BD1 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		A51BEF6C1DD2779400527BD1 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A51BEF701DD27D2800527BD1 /* MapPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
-		A51BEF721DD4B86C00527BD1 /* CaughtViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaughtViewController.swift; sourceTree = "<group>"; };
+		A51BEF781DD5587800527BD1 /* CaughtTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaughtTableViewCell.swift; sourceTree = "<group>"; };
+		A51BEF7A1DD55ADE00527BD1 /* CaughtTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaughtTableViewController.swift; sourceTree = "<group>"; };
+		A51BEF7C1DD55CEA00527BD1 /* Caught.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Caught.swift; sourceTree = "<group>"; };
+		A51BEF801DD5702B00527BD1 /* CaughtViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaughtViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,7 +146,10 @@
 				A51BEF4B1DD01E7100527BD1 /* RegisterViewController.swift */,
 				A51BEF6A1DD2619D00527BD1 /* MapViewController.swift */,
 				A51BEF6C1DD2779400527BD1 /* ProfileViewController.swift */,
-				A51BEF721DD4B86C00527BD1 /* CaughtViewController.swift */,
+				A51BEF781DD5587800527BD1 /* CaughtTableViewCell.swift */,
+				A51BEF7A1DD55ADE00527BD1 /* CaughtTableViewController.swift */,
+				A51BEF7C1DD55CEA00527BD1 /* Caught.swift */,
+				A51BEF801DD5702B00527BD1 /* CaughtViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -308,10 +317,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A51BEF731DD4B86C00527BD1 /* CaughtViewController.swift in Sources */,
+				A51BEF811DD5702B00527BD1 /* CaughtViewController.swift in Sources */,
 				A51BEF4A1DD0190900527BD1 /* LoginViewController.swift in Sources */,
+				A51BEF7D1DD55CEA00527BD1 /* Caught.swift in Sources */,
 				A51BEF371DD0182300527BD1 /* ViewController.swift in Sources */,
 				A51BEF351DD0182300527BD1 /* AppDelegate.swift in Sources */,
+				A51BEF791DD5587800527BD1 /* CaughtTableViewCell.swift in Sources */,
+				A51BEF7B1DD55ADE00527BD1 /* CaughtTableViewController.swift in Sources */,
 				A51BEF551DD031B100527BD1 /* Constants.swift in Sources */,
 				A51BEF6D1DD2779400527BD1 /* ProfileViewController.swift in Sources */,
 				A51BEF661DD16A2200527BD1 /* People.swift in Sources */,
