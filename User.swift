@@ -18,7 +18,7 @@ class User : NetworkModel {
     var latitude : Double?
     var longitude : Double?
     var created : String?
-    var radiusInMeters : Double?
+    var radiusInMeters : Int?
     var caughtUserId : String?
     var conversationId : String?
     var recipientId : String?
@@ -51,14 +51,14 @@ class User : NetworkModel {
     required init() {}
     
     required init(json: JSON) throws {
-        //token = try? json.getString(at: Constants.Person.token)
+        //token = try? json.getString(at: Constants.User.token)
         userId = try? json.getString(at: Constants.User.userId)
         userName = try? json.getString(at: Constants.User.userName)
         avatarBase64 = try? json.getString(at: Constants.User.avatarBase64)
         latitude = try? json.getDouble(at: Constants.User.latitude)
         longitude = try? json.getDouble(at: Constants.User.longitude)
         created = try? json.getString(at: Constants.User.created)
-        radiusInMeters = try? json.getDouble(at: Constants.User.radiusInMeter)
+        radiusInMeters = try? json.getInt(at: Constants.User.radiusInMeter)
         caughtUserId = try? json.getString(at: Constants.User.caughtUserId)
         conversationId = try? json.getString(at: Constants.User.conversationId)
         recipientId = try? json.getString(at: Constants.User.recipientId)
@@ -74,7 +74,7 @@ class User : NetworkModel {
         
     }
     
-    init(radiusInMeters: Double) {
+    init(radiusInMeters: Int) {
         self.radiusInMeters = radiusInMeters
         requestType = .nearby
     }
@@ -85,7 +85,7 @@ class User : NetworkModel {
         requestType = .checkin
     }
     
-    init(caughtUserId: String?, radiusInMeters: Double?) {
+    init(caughtUserId: String?, radiusInMeters: Int?) {
         self.caughtUserId = caughtUserId
         self.radiusInMeters = radiusInMeters
         requestType = .Catch
@@ -161,9 +161,8 @@ class User : NetworkModel {
             
             
         case .Catch:
-            params[Constants.User.userName] = userName as AnyObject?
-            params[Constants.User.latitude] = latitude as AnyObject?
-            params[Constants.User.longitude] = longitude as AnyObject?
+            params[Constants.User.caughtUserId] = caughtUserId as AnyObject?
+            params[Constants.User.radiusInMeter] = radiusInMeters as AnyObject?
             
             
         case .nearby:

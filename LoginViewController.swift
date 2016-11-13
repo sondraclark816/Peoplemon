@@ -66,7 +66,7 @@ class LoginViewController: UIViewController {
         UserStore.shared.login(user) { (success, error) in
             MBProgressHUD.hide(for: self.view, animated: true)
             
-            if success {
+            if success { //post notification to notification center
                 self.dismiss(animated: true, completion: nil)
             } else if let error = error {
                 self.present(Utils.createAlert(message: error), animated: true, completion: nil)

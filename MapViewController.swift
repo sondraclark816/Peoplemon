@@ -2,7 +2,7 @@ import UIKit
 import MapKit
 import MBProgressHUD
 import CoreLocation
-import SafariServices
+import Alamofire
 
 class MapViewController: UIViewController {
     
@@ -14,9 +14,9 @@ class MapViewController: UIViewController {
     var annotations: [MapPin] = []
     var latitudeDelta = 0.005
     var longitudeDelta = 0.005
-    var caught: [Caught]!
     
     var overlay: MKAnnotation?
+    var timer: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +25,8 @@ class MapViewController: UIViewController {
         mapView.delegate = self
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        locationManager.distanceFilter = kCLDistanceFilterNone
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        //locationManager.distanceFilter = kCLDistanceFilterNone
+        //locationManager.desiredAccuracy = kCLLocationAccuracyBest
         mapView.showsUserLocation = true
         locationManager.startUpdatingLocation()
         
@@ -40,19 +40,33 @@ class MapViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        super.viewDidAppear(animated) //listen for notification/ says successfully logged in.
         if !WebServices.shared.userAuthTokenExists() || WebServices.shared.userAuthTokenExpired(){
             performSegue(withIdentifier: "PresentLoginNoAnimation", sender: self)
             
+        } else {
+            startTimer()
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) { //stop listening 
+        stopTimer()
+    }
+    
+    func startTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(checkinTapped(_:)), userInfo: nil, repeats: true)
+    }
+    
+    func stopTimer() {
+        timer?.invalidate()
+        timer = nil
     }
     
     
     
     
-    
     func loadNearbyPeople (){
-        let nearbyPerson = User(radiusInMeters: 100.0)
+        let nearbyPerson = User(radiusInMeters: 100)
         WebServices.shared.getObjects(nearbyPerson) { (objects, errors) in
             if let objects = objects {
                 let oldannotations = self.annotations
@@ -71,24 +85,12 @@ class MapViewController: UIViewController {
         if let mapPin = view.annotation as? MapPin, let people = mapPin.user, let name = people.userName, let userId = people.userId {
             let alert = UIAlertController(title: "Catch", message: "\(name)?", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Catch", style: .default, handler: { (action) in
-                let catchPeople = User(caughtUserId: userId, radiusInMeters: 100.0)
+                let catchPeople = User(caughtUserId: userId, radiusInMeters: 100)
                 WebServices.shared.postObject(catchPeople, completion: { (object, error) in
                     if let error = error{
                         self.present(Utils.createAlert(message: error), animated: true, completion: nil)
                     } else{
                         self.present(Utils.createAlert("Nice!", message: "You've caught \(name)!"), animated: true, completion: nil)
-                        
-                        
-                        let filePath = self.archiveFilePath()
-                        let fileManager = FileManager.default
-                        
-                        if fileManager.fileExists(atPath: filePath) {
-                            self.caught = NSKeyedUnarchiver.unarchiveObject(withFile: filePath) as! [Caught]
-                        } else {
-                            self.caught = []
-                            self.caught.append(Caught(username: "Note 1", avatar: "This is my note."))
-                            
-                        }
                     }
                 })
             }))
@@ -110,11 +112,7 @@ class MapViewController: UIViewController {
             let people = User(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
             
             WebServices.shared.postObject(people, completion: { (person, error) in
-                if let error = error {
-                    self.present(Utils.createAlert(message: error), animated: true, completion: nil)
-                }else {
-                    self.present(Utils.createAlert("User", message: "You are officially checked in."), animated: true, completion: nil)
-                }
+                
             })
         }
         /*
@@ -159,7 +157,7 @@ extension MapViewController: MKMapViewDelegate {
             pinView?.isEnabled = true
             pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
             pinView!.canShowCallout = true
-            pinView!.animatesDrop = true
+            pinView!.animatesDrop = false
             
         } else {
             pinView?.annotation = annotation

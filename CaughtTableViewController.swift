@@ -11,6 +11,7 @@ import UIKit
 class CaughtTableViewController: UITableViewController {
     
     
+    
     var caught: [User] = []
     
     override func viewDidLoad() {
