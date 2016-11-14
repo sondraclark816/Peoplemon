@@ -163,6 +163,7 @@ class User : NetworkModel {
         case .Catch:
             params[Constants.User.caughtUserId] = caughtUserId as AnyObject?
             params[Constants.User.radiusInMeter] = radiusInMeters as AnyObject?
+            params[Constants.User.userName] = userName as AnyObject?
             
             
         case .nearby:

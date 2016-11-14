@@ -111,6 +111,9 @@
                                     </subviews>
                                     <color key="backgroundColor" red="0.8719896674156189" green="0.96588402986526489" blue="0.92068666219711304" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="userNameLabel" destination="bV0-GU-TTC" id="SFm-dF-GQF"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -220,7 +223,7 @@
         <image name="nav back icon -dark" width="11" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bbT-U1-t0H"/>
+        <segue reference="5kQ-un-cxh"/>
         <segue reference="rej-HC-Awo"/>
     </inferredMetricsTieBreakers>
 </document>

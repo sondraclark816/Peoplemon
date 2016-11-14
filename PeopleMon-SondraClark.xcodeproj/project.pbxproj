@@ -30,6 +30,7 @@
 		A51BEF7B1DD55ADE00527BD1 /* CaughtTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BEF7A1DD55ADE00527BD1 /* CaughtTableViewController.swift */; };
 		A51BEF851DD662AA00527BD1 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BEF841DD662AA00527BD1 /* Profile.swift */; };
 		A51BEF871DD90E4600527BD1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BEF861DD90E4600527BD1 /* ProfileViewController.swift */; };
+		A51BEF891DD936AE00527BD1 /* CaughtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BEF881DD936AE00527BD1 /* CaughtViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		A51BEF7A1DD55ADE00527BD1 /* CaughtTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaughtTableViewController.swift; sourceTree = "<group>"; };
 		A51BEF841DD662AA00527BD1 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		A51BEF861DD90E4600527BD1 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A51BEF881DD936AE00527BD1 /* CaughtViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CaughtViewController.swift; path = ../../../CaughtViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				A51BEF491DD0190900527BD1 /* LoginViewController.swift */,
 				A51BEF4B1DD01E7100527BD1 /* RegisterViewController.swift */,
 				A51BEF6A1DD2619D00527BD1 /* MapViewController.swift */,
+				A51BEF881DD936AE00527BD1 /* CaughtViewController.swift */,
 				A51BEF781DD5587800527BD1 /* CaughtTableViewCell.swift */,
 				A51BEF7A1DD55ADE00527BD1 /* CaughtTableViewController.swift */,
 				A51BEF861DD90E4600527BD1 /* ProfileViewController.swift */,
@@ -331,6 +334,7 @@
 				A51BEF641DD15FF600527BD1 /* User.swift in Sources */,
 				A51BEF4C1DD01E7100527BD1 /* RegisterViewController.swift in Sources */,
 				A51BEF571DD031CF00527BD1 /* Utils.swift in Sources */,
+				A51BEF891DD936AE00527BD1 /* CaughtViewController.swift in Sources */,
 				A51BEF5D1DD0D63C00527BD1 /* WebServicesExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

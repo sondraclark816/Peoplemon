@@ -29,7 +29,10 @@ class CaughtTableViewCell: UITableViewCell {
     func setUpCell(user: User){
         self.user = user
         userNameLabel.text = user.userName
+        
     }
+    
+    
     
     
 }

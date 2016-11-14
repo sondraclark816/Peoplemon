@@ -31,6 +31,10 @@ class CaughtTableViewController: UITableViewController {
         
     }
     
+    func getCount() -> Int {
+        return caught.count
+    }
+    
     
     
     override func numberOfSections(in tableView: UITableView) -> Int {
